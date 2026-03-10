@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PickleScore – Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #2ECC71;
+    --orange: #F39C12;
+    --navy: #0D1B2A;
+    --slate: #1A2E42;
+    --light: #F4F9F4;
+    --muted: #7B9BA6;
+    --white: #FFFFFF;
+  }
+
+  body {
+    background: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .brochure {
+    width: 1100px;
+    min-height: 700px;
+    background: var(--slate);
+    border-radius: 28px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+    position: relative;
+  }
+
+  /* ── LEFT PANEL ── */
+  .left {
+    background: linear-gradient(145deg, #0e2235 0%, #0a1a28 100%);
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .left::before {
+    content: '';
+    position: absolute;
+    top: -120px; left: -120px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(46,204,113,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .left::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(243,156,18,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(46,204,113,0.15);
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 28px;
+  }
+
+  .badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+
+  .brand-wrapper {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .easy-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 52px;
+    color: cyan;
+    line-height: 1;
+    display: block;
+    margin-bottom: -12px;
+    margin-left: 6px;
+    text-shadow: 0 2px 20px rgba(0,255,255,0.4);
+  }
+
+  .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 86px;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .brand span {
+    color: var(--green);
+  }
+
+  .tagline {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 44px;
+  }
+
+  .headline {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  .body-copy {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #a8c4d0;
+    margin-bottom: 40px;
+  }
+
+  .body-copy strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 44px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .feature-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .feature-icon.green { background: rgba(46,204,113,0.15); }
+  .feature-icon.orange { background: rgba(243,156,18,0.15); }
+  .feature-icon.blue { background: rgba(52,152,219,0.15); }
+
+  .feature-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .feature-text span {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: #0a1a28;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* ── RIGHT PANEL ── */
+  .right {
+    background: linear-gradient(160deg, #1c3a55 0%, #0f2336 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .right::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(46,204,113,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .devices-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .device-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+    display: block;
+  }
+
+  .score-badge {
+    position: absolute;
+    bottom: -18px;
+    right: 10px;
+    background: var(--navy);
+    border: 1px solid rgba(46,204,113,0.25);
+    border-radius: 16px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  .score-dot {
+    width: 10px; height: 10px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(46,204,113,0.7);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .score-label {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .score-val {
+    font-size: 13px;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .divider {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+    margin: 0 4px;
+    align-self: center;
+  }
+
+  .phone-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  /* ── PIXEL-PERFECT iPHONE FRAME ── */
+  .iphone-frame {
+    position: relative;
+    width: 248px;
+    /* body */
+    background: linear-gradient(160deg, #2c2c2e 0%, #1c1c1e 40%, #141414 100%);
+    border-radius: 50px;
+    padding: 16px 9px 18px;
+    /* outer ring (titanium band) */
+    box-shadow:
+      /* inner highlight */
+      inset 0 1px 0 rgba(255,255,255,0.18),
+      inset 0 -1px 0 rgba(0,0,0,0.6),
+      /* titanium band */
+      0 0 0 1.5px #4a4a4c,
+      0 0 0 3px #2a2a2c,
+      0 0 0 4px #3c3c3e,
+      /* outer shadow */
+      0 40px 80px rgba(0,0,0,0.8),
+      0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  /* Volume buttons LEFT */
+  .iphone-frame::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 90px;
+    width: 4px;
+    height: 30px;
+    background: linear-gradient(180deg, #3a3a3c, #2a2a2c);
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 38px 0 #3a3a3c, 0 72px 0 #3a3a3c, -1px 0 0 rgba(255,255,255,0.1);
+  }
+
+  /* Power button RIGHT */
+  .iphone-frame::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 118px;
+    width: 4px;
+    height: 56px;
+    background: linear-gradient(180deg, #3a3a3c, #2a2a2c);
+    border-radius: 0 3px 3px 0;
+    box-shadow: 1px 0 0 rgba(255,255,255,0.08);
+  }
+
+  /* Dynamic Island */
+  .iphone-dynamic-island {
+    width: 88px;
+    height: 26px;
+    background: #000;
+    border-radius: 20px;
+    margin: 0 auto 8px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 2px rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Camera dot inside Dynamic Island */
+  .iphone-dynamic-island::before {
+    content: '';
+    width: 9px; height: 9px;
+    background: #0a0a0a;
+    border-radius: 50%;
+    border: 1px solid #1a1a1a;
+    box-shadow: inset 0 0 3px rgba(100,180,255,0.15);
+  }
+
+  /* Speaker dot inside Dynamic Island */
+  .iphone-dynamic-island::after {
+    content: '';
+    width: 4px; height: 4px;
+    background: #111;
+    border-radius: 50%;
+  }
+
+  .iphone-screen-wrap {
+    overflow: hidden;
+    border-radius: 38px;
+    width: 100%;
+    aspect-ratio: 9/19.5;
+    background: #000;
+    /* Screen inner shadow / bezel */
+    box-shadow:
+      inset 0 0 0 1px rgba(0,0,0,0.9),
+      inset 0 2px 4px rgba(0,0,0,0.6);
+    position: relative;
+  }
+
+  /* Screen glare/reflection overlay */
+  .iphone-screen-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 5;
+    border-radius: 38px 38px 0 0;
+  }
+
+
+
+  .iphone-home-bar {
+    width: 90px;
+    height: 4px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 4px;
+    margin: 10px auto 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+
+
+  .devices-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .iphone-wrap {
+    flex: 0 0 auto;
+  }
+
+  .img-iphone {
+    width: 210px;
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.07);
+    display: block;
+  }
+
+  .watch-mega-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+
+
+
+  .img-watch {
+    width: 180px;
+    border-radius: 26px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);
+    display: block;
+  }
+
+  .mega-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: rgba(46,204,113,0.08);
+    border: 1px solid rgba(46,204,113,0.2);
+    border-radius: 16px;
+    padding: 12px 16px;
+    width: 180px;
+  }
+
+  .img-mega {
+    width: 90px;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(46,204,113,0.3));
+  }
+
+  .mega-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Image Collage Styles */
+  .image-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .collage-item {
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .collage-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+
+  .collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Special positioning for featured items */
+  .collage-item:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .collage-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .collage-item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .collage-item:nth-child(5) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .collage-item:nth-child(6) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  /* Apple Watch gets special treatment - positioned in empty right area */
+  .collage-item.watch {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: visible;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .watch-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* Apple Watch Frame */
+  .apple-watch-frame {
+    position: relative;
+    width: 120px;
+    height: 145px;
+    background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+    border-radius: 35px;
+    border: 2px solid #2a2a2a;
+    box-shadow: 
+      0 0 0 1px #3a3a3a,
+      0 8px 25px rgba(0,0,0,0.8),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  /* Digital Crown */
+  .apple-watch-frame::before {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 25px;
+    width: 6px;
+    height: 15px;
+    background: linear-gradient(90deg, #3a3a3a, #2a2a2a);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+
+  /* Side Button */
+  .apple-watch-frame::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 50px;
+    width: 4px;
+    height: 8px;
+    background: linear-gradient(90deg, #3a3a3a, #2a2a2a);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+
+  .apple-watch-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 
+      inset 0 0 0 1px rgba(0,0,0,0.9),
+      inset 0 1px 2px rgba(0,0,0,0.8);
+    position: relative;
+  }
+
+  .apple-watch-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Screen reflection */
+  .apple-watch-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+    pointer-events: none;
+    border-radius: 28px 28px 0 0;
+  }
+
+  /* Add subtle animation for the collage */
+  .image-collage {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Print-friendly adjustments */
+  @media print {
+    body { background: white; }
+    .brochure { box-shadow: none; }
+    .image-collage { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+// Pills are now fixed in position - no drag functionality needed
+</script>
+
+<div class="brochure">
+
+  <!-- LEFT -->
+  <div class="left">
+    <div>
+      <div class="badge">Pickleball Scorekeeper</div>
+      <div class="brand-wrapper">
+        <span class="easy-script">Fun & Easy</span>
+        <div class="brand">Pickle<span>Mate</span></div>
+      </div>
+      <div class="tagline">The smartest way to keep score on the court</div>
+
+      <div class="headline">Never lose track of the score again.</div>
+
+      <p class="body-copy">
+        Just tap <strong>Point</strong> or <strong>Fault</strong> — on your Apple Watch, iPhone,
+        or with a simple <strong>voice command</strong>. PickleScore handles everything else
+        automatically: it announces the score out loud, tells you who serves next,
+        and keeps the game moving.<br><br>
+        Connect a <strong>Bluetooth speaker</strong> and the whole court hears it.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon green">⌚</div>
+          <div class="feature-text">
+            <strong>Apple Watch + iPhone</strong>
+            <span>Tap Point or Fault right from your wrist</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon orange">🔊</div>
+          <div class="feature-text">
+            <strong>Voice Announcements</strong>
+            <span>Score and server called out automatically</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon blue">🎙️</div>
+          <div class="feature-text">
+            <strong>Voice Commands</strong>
+            <span>Hands-free scoring so you stay in the game</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size:12px; color: var(--muted); margin-bottom: 16px; font-style: italic; font-weight: 300;">
+        No more arguments. No more confusion. Just play.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="#">Download Free</a>
+        <a class="btn-ghost" href="#">App Store ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+
+    <!-- Image Collage -->
+    <div class="image-collage">
+      <div class="collage-item">
+        <img src="Simulator Screenshot - iPhone 16e - 2026-03-08 at 20.52.49.png" alt="PickleScore iPhone Interface">
+      </div>
+      <div class="collage-item">
+        <img src="Simulator Screenshot - iPhone 17 Pro - 2026-03-08 at 16.20.19.png" alt="PickleScore iPhone App">
+      </div>
+      <div class="collage-item watch">
+        <div class="apple-watch-frame">
+          <div class="apple-watch-screen">
+            <img src="Simulator Screenshot - Apple Watch Series 11 (46mm) - 2026-03-08 at 20.58.11.png" alt="PickleScore Apple Watch">
+          </div>
+        </div>
+        <div class="watch-label">Apple Watch</div>
+      </div>
+      <div class="collage-item">
+        <img src="Simulator Screenshot - iPhone 16e - 2026-03-08 at 20.53.11.png" alt="PickleScore Score Tracking">
+      </div>
+      <div class="collage-item">
+        <img src="Simulator Screenshot - iPhone 16e - 2026-03-08 at 20.53.19.png" alt="PickleScore Settings">
+      </div>
+      <div class="collage-item">
+        <img src="Simulator Screenshot - iPhone 16e - 2026-03-08 at 20.53.28.png" alt="PickleScore Features">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
