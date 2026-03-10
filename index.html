@@ -2,18 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World - GitHub Pages</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hello World Test</title>
+    <style>
+        body { 
+            background: #222; 
+            color: white; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: sans-serif; 
+        }
+        .box { padding: 20px; border: 2px solid #007bff; border-radius: 10px; }
+    </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1 id="main-greeting">Loading...</h1>
-        <p>Your GitHub Pages site is officially live!</p>
-        <button id="colorBtn">Change Theme</button>
+    <div class="box">
+        <h1 id="test">If you see this, it works!</h1>
+        <button onclick="document.body.style.background='purple'">Click Me</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        console.log("JS is running!");
+        document.getElementById('test').innerText = "GitHub Pages is LIVE! 🚀";
+    </script>
 </body>
 </html>
